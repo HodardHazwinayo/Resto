@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,27 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Resto</title>
 
   <!-- Favicons -->
-  <link href="../static/img/favicon.png" rel="icon">
-  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static '/img/favicon.png' %}" rel="icon">
+  <link href="{% static '/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static '/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <!--external css-->
-  <link href="../static/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="{% static '/lib/font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="../static/css/style.css" rel="stylesheet">
-  <link href="../static/css/style-responsive.css" rel="stylesheet">
-  
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+  <link href="{% static '/css/style-responsive.css' %}" rel="stylesheet">
 </head>
 
 <body onload="getTime()">
@@ -38,7 +31,7 @@
     <div class="col-lg-4 col-lg-offset-4">
       <div class="lock-screen">
         <h2><a data-toggle="modal" href="#myModal"><i class="fa fa-lock"></i></a></h2>
-        <p>UNLOCK</p>
+        <p><b>UNLOCK</b></p>
         <!-- Modal -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
           <div class="modal-dialog">
@@ -48,7 +41,7 @@
                 <h4 class="modal-title">Welcome Back</h4>
               </div>
               <div class="modal-body">
-                <p class="centered"><img class="img-circle" width="80" src="img/ui-sam.jpg"></p>
+                <p class="centered"><img class="img-circle" width="80" src="{% static '/img/ui-sam.jpg' %}"></p>
                 <input type="password" name="password" placeholder="Password" autocomplete="off" class="form-control placeholder-no-fix">
               </div>
               <div class="modal-footer centered">
@@ -66,13 +59,13 @@
   </div>
   <!-- /container -->
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="{% static '/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/lib/bootstrap/js/bootstrap.min.js' %}"></script>
   <!--BACKSTRETCH-->
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-  <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
+  <script type="text/javascript" src="{% static '/lib/jquery.backstretch.min.js' %}"></script>
   <script>
-    $.backstretch("img/login-bg.jpg", {
+    $.backstretch("{% static '/img/Kigali-Rwanda.png' %}", {
       speed: 500
     });
   </script>
