@@ -10,17 +10,10 @@
         <div class="row mt">
           <div class="col-lg-12">
               <form method="POST" action=".">
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  <input type="submit" name="Add a new table">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" name="Create Meal">
               </form>
-              {% for table in object_list %}
-              <ul>
-              <li>{{ table }}</li>
-                  {% empty %}
-                  <div class="alert alert-danger"><b>No Tables yet!</b> Try adding them.</div>
-              </ul>
-              {% endfor %}
           </div>
         </div>
       </section>
@@ -31,4 +24,3 @@
   </section>
 {% endblock %}
 </body>
-

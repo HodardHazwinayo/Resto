@@ -2,10 +2,13 @@ from django.db import models
 from django.http import HttpResponse
 
 # Create your models here.
+
+# ---------- MEAL MODEL ------------------------
 class Meal(models.Model):
     title = models.CharField(max_length=140)
     description = models.TextField()
     price = models.PositiveIntegerField()
+    # picture = models.ImageField(upload_to=)
     class Meta:
         verbose_name =("Meal")
         verbose_name_plural =("Meals")
@@ -16,19 +19,21 @@ class Meal(models.Model):
     def get_absolute_url(self):
         return HttpResponse("Meal_detail", kwargs={"pk": self.pk})
 
+# ---------- TABLE MODEL ------------------------
 
 class Table(models.Model):
-    color = models.CharField(max_length=60)
+    name = models.CharField(max_length=60)
     class Meta:
         verbose_name = ("Table")
         verbose_name_plural = ("Tables")
 
     def __str__(self):
-        return self.color
+        return self.name
 
     def get_absolute_url(self):
         return reverse("Table_detail", kwargs={"pk": self.pk})
 
+# ---------- EMPLOYEE MODEL ------------------------
 
 class Employee(models.Model):
     first_name = models.CharField(max_length=50)
@@ -51,12 +56,14 @@ class Employee(models.Model):
     def get_absolute_url(self):
         return reverse("Employee_detail", kwargs={"pk": self.pk})
 
+# ---------- ORDER MODEL ------------------------
 
 class Order(models.Model):
+    timestamp = models.DateTimeField(auto_now=True)
 
     Table = models.ForeignKey(
         to= 'Table',
-        related_name='serveon',
+        related_name='serve_on',
         blank=True,
         null=True,
         on_delete=models.CASCADE)
@@ -88,3 +95,9 @@ class Order(models.Model):
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})
+
+    def get_delete_url(self):
+        return ("orders/{}/delete").format(self.pk)
+
+    def get_update_url(self):
+        return ("orders/{}/update").format(self.pk)

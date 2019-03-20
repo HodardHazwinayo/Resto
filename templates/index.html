@@ -130,7 +130,7 @@
             <!-- /row -->
             <div class="row">
               <!-- WEATHER PANEL -->
-              <div class="col-md-4 mb">
+              <div class="col-md-4 mb" style="background-image: ../static/img/Kigali-Rwanda.jpg" >
                 <div class="weather pn">
                   <i class="fa fa-cloud fa-4x"></i>
                   <h2>22º C</h2>
@@ -262,77 +262,25 @@
             </div>
             <!--new earning end-->
             <!-- RECENT ACTIVITIES SECTION -->
+
             <h4 class="centered mt">RECENT ACTIVITY</h4>
-            <!-- First Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>Just Now</muted>
-                  <br/>
-                  <a href="#">Paul Rudd</a> purchased an item.<br/>
-                </p>
-              </div>
-            </div>
-            <div id="content-related">
-              <div class="module" id="recent-actions-module">
-                  <ul class="actionlist">
-                      
-                      <li class="addlink">
-                          
-                              <a href="/admin/core/meal/1/change/">King Burger</a>
-                          
-                          <br>
-                          
-                              <span class="mini quiet">Meal</span>
-                          
-                      </li>
-                      
-                      </ul>
-                      
-              </div>
-          </div>
             <!-- Second Activity -->
+
             <div class="desc">
               <div class="thumb">
                 <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
               </div>
               <div class="details">
+                {% for order in object_list %}
                 <p>
-                  <muted>2 Minutes Ago</muted>
+                  <muted>{{ order.timestamp }}</muted>
                   <br/>
-                  <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                  <a href="#">{{ order.waiter }}</a> received an order for {{ order.Meal }}.<br/>
                 </p>
+                {% endfor %}
               </div>
             </div>
-            <!-- Third Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>3 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
-                </p>
-              </div>
-            </div>
-            <!-- Fourth Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>7 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Brando Page</a> purchased a year subscription.<br/>
-                </p>
-              </div>
-            </div>
+
             <!-- USERS ONLINE SECTION -->
             <h4 class="centered mt">EMPLOYEES ONLINE</h4>
             <!-- First Member -->

@@ -6,7 +6,7 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
+        <h3><i class="fa fa-angle-right"></i><input method="POST" href="/create_meal" type="submit" >Add a New Meal</h3>
         <div class="row mt">
           <div class="col-lg-12">
             
@@ -50,6 +50,8 @@
                                 {{ meal.price }} Rwf
                               </td>
                             </tr>
+                            {% empty %}
+                            <div class="alert alert-danger"><b>No Meals yet!</b> Try adding them <button href="/create_meal">Here</button> .</div>
                             {% endfor %}
                           </tbody>
                         </table>
@@ -69,4 +71,3 @@
 
 </body>
 {% endblock %}
-</html>

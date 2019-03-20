@@ -14,8 +14,18 @@ RESOURCES:
 
 3. Meals: {ID, Title, Description, Image, price} it can have a relationship with an order and Table
 
-4. Calls: {ID, Timestamp, Type} it will have a relationship with table and employee
+4. ~~Calls: {ID, Timestamp, Type} it will have a relationship with table and employee~~
 
 5. Orders: {ID, Table, Meal} it will have relationship with employee and table and meal
 
 How To:
+
+give url and table number with wi-fi and password on each table, the url leads client to a web page where he can choose to call waiter, request/pay for bill or make an order or leave feedback.
+
+this will remove the need for any hardware. waiters will have tablets that they use to receive notifications and messages. they should be able to manage bills ,edit them and change tables.
+
+**Future Features:**
+1. Payroll
+2. accepting online payments
+3. add table devices
+4. 

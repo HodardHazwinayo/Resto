@@ -238,8 +238,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="{% static '/img/ui-sam.jpg' %}" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href="profile.html"><img src="{% static '/img/rounded-me.png' %}" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Manager</h5>
           <li class="mt">
             <a class="active" href="/">
               <i class="fa fa-dashboard"></i>
@@ -254,6 +254,7 @@
             <ul class="sub">
               <li><a href="/orders">Orders</a></li>
               <li><a href="/meals">Meals</a></li>
+              <li><a href="/create_meal">Add a New Meal</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -263,18 +264,18 @@
               </a>
             <ul class="sub">
               <li><a href="/employees">All Employees</a></li>
-              <li><a href="add_employee.html">Add a New Employee</a></li>
+              <li><a href="/create_employee">Add a New Employee</a></li>
               <li><a href="employee_reports.html">Reports</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Tables & Devices</span>
+              <span>Tables & Reservation</span>
               </a>
             <ul class="sub">
               <li><a href="/tables">Tables</a></li>
-              <li><a href="/devices">Devices</a></li>
+              <li><a href="/reservations">Reservations</a></li>
       
             </ul>
           </li>
@@ -291,7 +292,7 @@
             </ul>
           </li>
           <li>
-            <a href="google_maps.html">
+            <a href="/tips">
               <i class="fa fa-map-marker"></i>
               <span>Help </span>
               </a>
