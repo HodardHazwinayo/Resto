@@ -1,10 +1,29 @@
-{% extends "layout.html" %}
-<head>
-    <meta charset="UTF-8">
-    <title>How to use this software efficiently</title>
-</head>
-{% block content %}
+{% extends 'layout.html' %}
+{% load static %}
+
 <body>
-<p> the help page</p>
-</body>
+  {% block content %}
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <h3><i class="fa fa-question-circle-o"></i> How To Use this Software efficiently</h3>
+        <div class="row mt">
+          <div class="col-lg-12">
+            <p>Start by following this steps:</p>
+              <ul class="center">
+                  <li>1. Add Tables</li>
+                  <li>2. Employees</li>
+                  <li>3. aAdd Categories of Meals</li>
+                  <li>4. Add Meals</li>
+                  <li>5. Start Receiving Orders</li>
+              </ul>
+          </div>
+        </div>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+  </section>
 {% endblock %}
+</body>

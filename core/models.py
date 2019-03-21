@@ -8,7 +8,11 @@ class Meal(models.Model):
     title = models.CharField(max_length=140)
     description = models.TextField()
     price = models.PositiveIntegerField()
-    # picture = models.ImageField(upload_to=)
+    # picture = models.ImageField(upload_to='meals/', default='meals/work8.jpg')
+    category = models.ForeignKey('MealCategory',
+                                 related_name='meals',
+                                 on_delete=models.CASCADE,
+                                 blank=True)
     class Meta:
         verbose_name =("Meal")
         verbose_name_plural =("Meals")
@@ -19,10 +23,18 @@ class Meal(models.Model):
     def get_absolute_url(self):
         return HttpResponse("Meal_detail", kwargs={"pk": self.pk})
 
+    def get_delete_url(self):
+        return ("meals/{}/delete").format(self.pk)
+
+    def get_update_url(self):
+        return ("meals/{}/update").format(self.pk)
+
 # ---------- TABLE MODEL ------------------------
 
 class Table(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, blank=True)
+    note = models.TextField(max_length=240, blank=True)
+    # picture = models.ImageField(upload_to='/tables/', default='tables/tablex.jpg')
     class Meta:
         verbose_name = ("Table")
         verbose_name_plural = ("Tables")
@@ -32,6 +44,12 @@ class Table(models.Model):
 
     def get_absolute_url(self):
         return reverse("Table_detail", kwargs={"pk": self.pk})
+
+    def get_delete_url(self):
+        return ("tables/{}/delete").format(self.pk)
+
+    def get_update_url(self):
+        return ("tables/{}/update").format(self.pk)
 
 # ---------- EMPLOYEE MODEL ------------------------
 
@@ -101,3 +119,24 @@ class Order(models.Model):
 
     def get_update_url(self):
         return ("orders/{}/update").format(self.pk)
+
+# ---------- CATEGORY MODEL ----------------------
+class MealCategory(models.Model):
+    name = models.CharField(max_length=140, blank=True)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = ("MealCategory")
+        verbose_name_plural = ("MealCategories")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("MealCategory_detail", kwargs={"pk": self.pk})
+
+    def get_delete_url(self):
+        return ("MealCategories/{}/delete").format(self.pk)
+
+    def get_update_url(self):
+        return ("MealCategories/{}/update").format(self.pk)

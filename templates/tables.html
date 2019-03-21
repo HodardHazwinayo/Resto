@@ -4,31 +4,53 @@
 <body>
   {% block content %}
     <!--main content start-->
-    <section id="main-content">
+    <section id="main-content" class="container">
       <section class="wrapper site-min-height">
         <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
         <div class="row mt">
           <div class="col-lg-12">
+              <div class="container">
               <form method="POST" action=".">
                   {% csrf_token %}
                   {{ form.as_p }}
                   <input type="submit" name="Add a new table">
               </form>
-              {% for table in object_list %}
-              <ul>
-              <li>{{ table }}</li>
-                  {% empty %}
-                  <div class="alert alert-danger"><b>No Tables yet!</b> Try adding them.</div>
-              </ul>
-              {% endfor %}
+              </div>
+              <!-- /wrapper -->
+
+              <div class="row">
+                      <!-- /col-md-4-->
+                      <!--  Blog Panel -->
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 mb">
+
+                          <div class="content-panel pn">
+                              {% for table in object_list %}
+                              <div id="blog-bg">
+                                  <div class="badge badge-popular">{{ table }}</div>
+                                  <!--<div class="blog-title">Incredible Title</div>-->
+                              </div>
+                              <div class="blog-text">
+                                  <p>{{ table.note }} </p>
+                                  <button class="btn btn-primary btn-xs"><a href="/{{ table.get_update_url}}"><i class="fa fa-pencil"></i></a></button>
+                                  <button class="btn btn-danger btn-xs" ><a href="/{{ table.get_delete_url }}"><i class="fa fa-trash-o "></i></a></button>
+                              </div>
+                              {% empty %}
+                              <div class="alert alert-danger"><b>No Tables yet!</b> Try adding them.</div>
+                              {% endfor %}
+                          </div>
+
+                      </div>
+
+                  <!-- /col-md-4-->
+              </div>
+
           </div>
         </div>
       </section>
-      <!-- /wrapper -->
+        <!-- /MAIN CONTENT -->
+        <!--main content end-->
     </section>
-    <!-- /MAIN CONTENT -->
-    <!--main content end-->
-  </section>
-{% endblock %}
+  {% endblock %}
 </body>
 

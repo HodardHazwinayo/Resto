@@ -28,4 +28,4 @@ this will remove the need for any hardware. waiters will have tablets that they 
 1. Payroll
 2. accepting online payments
 3. add table devices
-4. 
+4. add printable bills and support EBM if possible

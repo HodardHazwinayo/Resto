@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add New Employee</title>
-</head>
+{% extends 'layout.html' %}
+{% load static %}
+
 <body>
-<form method="POST" action=".">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <input type="submit" name="Add New Employee">
-
-</form>
+  {% block content %}
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
+        <div class="row mt">
+          <div class="col-lg-12">
+              <form method="POST" action=".">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="submit" name="Add New Employee">
+              </form>
+          </div>
+        </div>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+  </section>
+{% endblock %}
 </body>
-</html>

@@ -6,7 +6,7 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <h3><i class="fa fa-angle-right"></i><input method="POST" href="/create_meal" type="submit" >Add a New Meal</h3>
+        <h3><i class="fa fa-spoon"></i>ALL THE MEALS & BEVERAGES</h3>
         <div class="row mt">
           <div class="col-lg-12">
             
@@ -15,7 +15,6 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title"> Simple Table</h4>
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">
@@ -25,13 +24,16 @@
                               Name
                             </th>
                             <th>
-                              Description
+                              Picture
                             </th>
                             <th>
-                              City
+                              Description
                             </th>
                             <th class="text-right">
                               Salary
+                            </th>
+                            <th class="text-right">
+                              Edit/ Delete
                             </th>
                           </thead>
                           {% for meal in object_list %}
@@ -41,13 +43,18 @@
                                 {{meal}}
                               </td>
                               <td>
-                                {{meal.description}}
+                                <img src="../static/menu/img/portfolio/work8.jpg" height="40px" alt="">
                               </td>
                               <td>
-                                Oud-Turnhout
+                                {{meal.description}}
                               </td>
+
                               <td class="text-right">
                                 {{ meal.price }} Rwf
+                              </td>
+                              <td class="text-right">
+                                <button class="btn btn-primary btn-xs"><a href="/{{ meal.get_update_url}}"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-danger btn-xs" ><a href="/{{ meal.get_delete_url }}"><i class="fa fa-trash-o "></i></a></button>
                               </td>
                             </tr>
                             {% empty %}

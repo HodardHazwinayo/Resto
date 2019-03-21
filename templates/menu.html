@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>TALLY BAKERY&CAFE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="../static/menu/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/menu/prettyPhoto/css/prettyPhoto.css">
+        <link rel="stylesheet" href="../static/menu/css/flexslider.css">
+        <link rel="stylesheet" href="../static/menu/css/font-awesome.css">
+        <link rel="stylesheet" href="../static/menu/css/style.css">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="../static/menu/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../static/menu/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../static/menu/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../static/menu/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../static/menu/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <div class="container">
+            <div class="header row">
+                <div class="span12">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            <h1>
+                                <a class="brand" href="/menu">TALLY BAKERY CAFE</a>
+                            </h1>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav pull-right">
+                                    <li>
+                                        <a href="/menu"><i class="icon-home"></i><br />View Menu</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html"><i class="icon-home"></i><br />Reserve a Table</a>
+                                    </li>
+                                    <li class="current-page">
+                                        <a href="mailto:sam@ejobu.rw"><i class="icon-envelope"></i><br />Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <i class="icon-shopping-cart page-title-icon"></i>
+                        <h2>Menu /</h2>
+                        <p>Here is our Menu, Bonne Appetit</p>
+{#                        <p>{{ order_by(meal.timestamp) }}</p>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="portfolio portfolio-page container">
+            <div class="row">
+                <ul class="portfolio-img">
+                    {% for meal in object_list %}
+                    <li data-id="p-1" data-type="web-design" class="span3">
+                        <div class="work">
+                            <a href="../static/menu/img/portfolio/work8.jpg" rel="prettyPhoto">
+                                <img src="../static/menu/img/portfolio/work8.jpg" alt="">
+                            </a>
+                            <h4><a href="{{ get_absolute_url }}">{{ meal.title }}</a></h4>
+                            <p>{{ meal.description }}</p><p>{{ meal.price }} RWF</p>
+                            <button class="btn-primary">Order</button>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-border"></div>
+                <div class="row">
+                    <div class="copyright span4">
+                        <p>Copyright 2019 Tally Bakery Cafe - All rights reserved to <a href="http://250data.com">250Data</a>.</p>
+                    </div>
+                    <div class="social span8">
+                        <a class="facebook" href=""></a>
+                        <a class="dribbble" href=""></a>
+                        <a class="twitter" href=""></a>
+                        <a class="pinterest" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="../static/menu/js/jquery-1.8.2.min.js"></script>
+        <script src="../static/menu/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../static/menu/js/jquery.flexslider.js"></script>
+        <script src="../static/menu/js/jquery.tweet.js"></script>
+        <script src="../static/menu/js/jflickrfeed.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="../static/menu/js/jquery.ui.map.min.js"></script>
+        <script src="../static/menu/js/jquery.quicksand.js"></script>
+        <script src="../static/menu/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+        <script src="../static/menu/js/scripts.js"></script>
+
+    </body>
+
+</html>
+

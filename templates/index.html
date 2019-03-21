@@ -270,15 +270,18 @@
               <div class="thumb">
                 <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
               </div>
+              {% for order in object_list %}
+
               <div class="details">
-                {% for order in object_list %}
                 <p>
+
                   <muted>{{ order.timestamp }}</muted>
                   <br/>
                   <a href="#">{{ order.waiter }}</a> received an order for {{ order.Meal }}.<br/>
+
                 </p>
-                {% endfor %}
               </div>
+              {% endfor %}
             </div>
 
             <!-- USERS ONLINE SECTION -->
